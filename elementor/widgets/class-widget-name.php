@@ -1,7 +1,6 @@
 <?php
 
 use Elementor\Controls_Manager;
-use Elementor\Group_Control_Background;
 use Elementor\Plugin;
 use Elementor\Widget_Base;
 
@@ -18,7 +17,7 @@ class Account_Info_Widget extends Widget_Base {
 	 * @return string
 	 */
 	public function get_name(): string {
-		return 'pe-latest-posts';
+		return 'account-info-plugin';
 	}
 
 	/**
@@ -36,7 +35,7 @@ class Account_Info_Widget extends Widget_Base {
 	 * @return string
 	 */
 	public function get_icon(): string {
-		return 'fa fa-clipboard';
+		return 'fa fa-user';
 	}
 
 	/**
@@ -46,7 +45,7 @@ class Account_Info_Widget extends Widget_Base {
 	 * @return string[]
 	 */
 	public function get_categories(): array {
-		return [ 'pe-category' ];
+		return [ 'woocommerce' ];
 	}
 
 
@@ -60,11 +59,10 @@ class Account_Info_Widget extends Widget_Base {
 		);
 
 		$this->add_control(
-			'pe-no-posts-message',
+			'aiw-no-controls',
 			[
-				'label' => __( 'Account', 'account-info-elementor-widget' ),
-				'type' => Controls_Manager::TEXT,
-				'default' => 'No controls'
+				'label' => __( 'No controls', AIW_PLUGIN_DOMAIN ),
+				'type' => Controls_Manager::RAW_HTML,
 			]
 		);
 
@@ -74,20 +72,9 @@ class Account_Info_Widget extends Widget_Base {
 	protected function render() {
 		if (Plugin::$instance->editor->is_edit_mode()) {
 			// If the Elementor editor is opened.
-
 		}
 
-		$args = array(
-			'post_type' => 'post',
-			'post_status' => 'publish',
-			'posts_per_page' => 6,
-			'orderby' => 'date',
-		);
-
-		$cpt = new WP_Query($args);
-		$posts = $cpt->posts;
-
-		if ( is_user_logged_in() /*&& is_account_page()*/ ) :
+		if ( is_user_logged_in() ) {
 			$current_user = wp_get_current_user();
 			$customer = new WC_Customer( $current_user->ID );
             ?>
@@ -95,7 +82,8 @@ class Account_Info_Widget extends Widget_Base {
                 <div><img src="<?= $customer->get_avatar_url(); ?>" class="account-info-elementor-widget-avatar"/></div>
                 <h1 class="account-info-elementor-widget-name"><?php printf( esc_html__( 'Hello %s,', 'woocommerce' ), esc_html( $customer->get_display_name() ) ); ?></h1>
 			</div>
-		<?php endif;
+		<?php
+        }
 	}
 }
 

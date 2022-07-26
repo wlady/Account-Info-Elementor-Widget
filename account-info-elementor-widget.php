@@ -3,18 +3,20 @@
  * @wordpress-plugin
  * Plugin Name: WC Account Info For Elementor
  * Version:     1.0.0
- * Plugin URI:  https://github.com/wlady
+ * Plugin URI:  https://github.com/wlady/account-info-elementor-widget
  * Description: WooCommerce Account Info Elementor Widget
  * Author:      Vladimir Zabara <wlady2001@gmail.com>
- * Author URI:  https://compoza.cet
+ * Author URI:  https://github.com/wlady
  * Text Domain: account-info-plugin
  * Domain Path: /languages/
  * License:     GPL v3
- * Requires at least: 5.5
+ * Requires at least: 5.9
+ * Tested up to: 6.0.0
+ * WC requires at least: 3.0
+ * WC tested up to: 6.4
+ * Elementor tested up to: 3.6.7
+ * Elementor Pro tested up to: 3.7.2
  * Requires PHP: 7.3.9
- *
- * PEP requires at least: 3.0
- * PEP tested up to: 5.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -30,7 +30,7 @@ final class AIW_Elementor {
 	 * Load plugin localization files.
 	 * Fired by `init` action hook.
 	 *
-	 * @since 1.9.2
+	 * @since 1.0.0
 	 * @access public
 	 */
 	public function i18n() {
@@ -44,7 +44,7 @@ final class AIW_Elementor {
 	 *
 	 * Fired by `plugins_loaded` action hook.
 	 *
-	 * @since 1.9.2
+	 * @since 1.0.0
 	 * @access public
 	 */
 	public function init() {
@@ -74,7 +74,7 @@ final class AIW_Elementor {
 	/**
 	 * Warning when the site doesn't have Elementor installed or activated.
 	 *
-	 * @since 1.9.2
+	 * @since 1.0.0
 	 * @access public
 	 */
 	public function admin_notice_missing_main_plugin() {
@@ -84,7 +84,7 @@ final class AIW_Elementor {
 
 		$message = sprintf(
 			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', AIW_PLUGIN_DOMAIN ),
-			'<strong>' . esc_html__( 'Projects Engine', AIW_PLUGIN_DOMAIN ) . '</strong>',
+			'<strong>' . esc_html__( 'WC Account Info For Elementor', AIW_PLUGIN_DOMAIN ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', AIW_PLUGIN_DOMAIN ) . '</strong>'
 		);
 
@@ -94,7 +94,7 @@ final class AIW_Elementor {
 	/**
 	 * Warning when the site doesn't have a minimum required Elementor version.
 	 *
-	 * @since 1.9.2
+	 * @since 1.0.0
 	 * @access public
 	 */
 	public function admin_notice_minimum_elementor_version() {
@@ -104,7 +104,7 @@ final class AIW_Elementor {
 
 		$message = sprintf(
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', AIW_PLUGIN_DOMAIN ),
-			'<strong>' . esc_html__( 'Projects Engine', AIW_PLUGIN_DOMAIN ) . '</strong>',
+			'<strong>' . esc_html__( 'WC Account Info For Elementor', AIW_PLUGIN_DOMAIN ) . '</strong>',
 			'<strong>' . esc_html__( 'Elementor', AIW_PLUGIN_DOMAIN ) . '</strong>',
 			'<strong>' . esc_html__( MINIMUM_ELEMENTOR_VERSION, AIW_PLUGIN_DOMAIN ) . '</strong>',
 		);
@@ -115,7 +115,7 @@ final class AIW_Elementor {
 	/**
 	 * Warning when the site doesn't have a minimum required PHP version.
 	 *
-	 * @since 1.9.2
+	 * @since 1.0.0
 	 * @access public
 	 */
 	public function admin_notice_minimum_php_version() {
@@ -125,7 +125,7 @@ final class AIW_Elementor {
 
 		$message = sprintf(
 			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', AIW_PLUGIN_DOMAIN ),
-			'<strong>' . esc_html__( 'Projects Engine', AIW_PLUGIN_DOMAIN ) . '</strong>',
+			'<strong>' . esc_html__( 'WC Account Info For Elementor', AIW_PLUGIN_DOMAIN ) . '</strong>',
 			'<strong>' . esc_html__( 'PHP', AIW_PLUGIN_DOMAIN ) . '</strong>',
 			'<strong>' . esc_html__( MINIMUM_PHP_VERSION, AIW_PLUGIN_DOMAIN ) . '</strong>',
 		);
